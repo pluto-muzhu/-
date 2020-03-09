@@ -1,0 +1,56 @@
+#include<stdio.h> 
+#include <stdlib.h>
+void quick(int g[],int low,int high)
+{
+	int first=low;
+	int last=high;
+	int key=g[first];
+
+	while(first<last)
+	{
+		while(first<last&&g[last]>key){
+			last--;
+		}
+		
+        if(first!=last){
+	    	g[first]=g[last];
+        }
+		while(first<last&&g[first]<key)
+		{
+			first++;
+		}
+        if(first!=last){
+	       	g[last]=g[first];
+        }
+	}
+	g[first] = key;
+
+	if(first>low){
+		quick(g,low,first-1);
+	}
+	
+	if(first<high){
+	quick(g,first+1,high);
+	}
+	
+	}
+	
+	int main()
+{
+    int g[10];
+	int i;
+	printf("请在下面输入10个数\n");
+	for(i = 0;i < 10; i++) 
+	{
+		printf("第%d个数：",i+1);
+		scanf("%d",&g[i]);
+	}
+    
+    quick(g, 0, 9);
+
+    for(i = 0; i < 10; i++)
+        printf("%d ", g[i]);
+    printf("\n");
+    system("pause");
+    return 0;
+}
