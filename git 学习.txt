@@ -1,0 +1,8 @@
+git status查看当前状态
+git add+文件（到暂存区）
+git commit -m"描述”（暂存到仓库）
+
+初始化信息
+git config --global user.name'pluto-muzhu'(设置用户名）
+ 
+git config --global user.name'1768812672@qq.com'(设置用户名邮箱）
